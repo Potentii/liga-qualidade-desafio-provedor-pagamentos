@@ -3,13 +3,36 @@ package br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * Representa uma transação de pagamento realizada.
+ * 
+ * Obs.: Essa entidade é imutável, qualquer modificação deve gerar uma nova instancia
+ */
 public abstract class Transacao {
-    
-    protected Long idTransacao;
-    protected BigDecimal valor;
-    protected TipoMetodoPagamento metodoPagamento;
-    protected LocalDate dataPagamento;
 
+    /**
+     * Identificador único da transação
+     */
+    protected final Long idTransacao;
+    /**
+     * Valor do pagamento
+     */
+    protected final BigDecimal valor;
+    /**
+     * Metodo utilizado para o pagamento
+     */
+    protected final TipoMetodoPagamento metodoPagamento;
+    /**
+     * Data que o pagamento foi realizado
+     */
+    protected final LocalDate dataPagamento;
+
+
+    
+    // ------------------------------------------------------
+    // Construtores
+    // ------------------------------------------------------
+    
     
     
     public Transacao(Long idTransacao, BigDecimal valor, TipoMetodoPagamento metodoPagamento, LocalDate dataPagamento) {
@@ -21,35 +44,26 @@ public abstract class Transacao {
 
     
     
+    // ------------------------------------------------------
+    // Getters / Setters
+    // ------------------------------------------------------
+    
+    
+    
     public Long getIdTransacao() {
         return idTransacao;
-    }
-
-    public void setIdTransacao(Long idTransacao) {
-        this.idTransacao = idTransacao;
     }
 
     public BigDecimal getValor() {
         return valor;
     }
 
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
-    }
-
     public TipoMetodoPagamento getMetodoPagamento() {
         return metodoPagamento;
-    }
-
-    public void setMetodoPagamento(TipoMetodoPagamento metodoPagamento) {
-        this.metodoPagamento = metodoPagamento;
     }
 
     public LocalDate getDataPagamento() {
         return dataPagamento;
     }
 
-    public void setDataPagamento(LocalDate dataPagamento) {
-        this.dataPagamento = dataPagamento;
-    }
 }

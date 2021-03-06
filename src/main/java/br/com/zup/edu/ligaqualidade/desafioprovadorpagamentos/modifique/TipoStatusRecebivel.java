@@ -1,6 +1,8 @@
 package br.com.zup.edu.ligaqualidade.desafioprovadorpagamentos.modifique;
 
+
 public enum TipoStatusRecebivel {
+    
     NAO_PROCESSADO("nao_processado"),
     PAGO("pago"), 
     AGUARDANDO_LIBERACAO_FUNDOS("aguardando_pagamento");
